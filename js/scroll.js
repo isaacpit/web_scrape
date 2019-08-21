@@ -93,7 +93,7 @@ async function getDownloadLinks(movieData) {
 async function localDownloadFromLinks(lst_download_links) {
   var folder = "./images/";
   var suffix = ".jpg";
-  for (var i = 0; i < 3; ++i) {
+  for (var i = 0; i < lst_download_links.length; ++i) {
   // for (var i = 0; i < lst_download_links.length; ++i) {
     // const example_image_1 = await download_image(lst_download_links[i], folder + i + ".jpg");
     console.log("i " + i + ": " + lst_download_links[i]);
