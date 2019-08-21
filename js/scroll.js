@@ -98,17 +98,32 @@ async function localDownloadFromLinks(lst_download_links) {
     // const example_image_1 = await download_image(lst_download_links[i], folder + i + ".jpg");
     console.log("i " + i + ": " + lst_download_links[i]);
 
-    await sleep_delay_download(1000);
-    setTimeout(download, 2000 ,lst_download_links[i], 
-      folder + i + suffix, function (state) {
-      console.log("progress", state);
-    }, function (response) {
-        console.log("status code", response.statusCode);
-    }, function (error) {
-        console.log("error", error);
-    }, function () {
-        console.log("done");
-    });
+    await sleep_delay_download(2000);
+    download(
+      lst_download_links[i],
+      folder + i + suffix, 
+      function (state) {
+        console.log("progress", state);
+      }, 
+      function (response) {
+          console.log("status code", response.statusCode);
+      }, 
+      function (error) {
+          console.log("error", error);
+      }, 
+      function () {
+          console.log("done");
+      });
+    // setTimeout(download, 2000 ,lst_download_links[i], 
+    //   folder + i + suffix, function (state) {
+    //   console.log("progress", state);
+    // }, function (response) {
+    //     console.log("status code", response.statusCode);
+    // }, function (error) {
+    //     console.log("error", error);
+    // }, function () {
+    //     console.log("done");
+    // });
   }
 
   return "poopoo";
