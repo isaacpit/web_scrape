@@ -14,7 +14,7 @@ async def main():
       # https://miyakogi.github.io/pyppeteer/reference.html#pyppeteer.page.Page.setViewport
       "viewport": {
         "width": 2880,
-        "height": 1080,
+        "height": 1880,
         "deviceScaleFactor": 2.0,
         "isLandscape": True,
       }
@@ -23,7 +23,7 @@ async def main():
     await page.emulate(options=opts)
 
     await page.goto('https://www.moviemania.io/desktop/wallpapers/popular')
-    await page.screenshot({'path': 'example.png'})
+    await page.screenshot({'path': 'screenshot.png'})
 
     # doc = await page.evaluate('''() => {
     #   return { 
@@ -86,6 +86,7 @@ async def main():
       opener.addheaders = [('User-agent', 'Mozilla/5.0')]
       urllib.request.install_opener(opener) 
       urllib.request.urlretrieve(url, './images/' + item['name'] + "_" + str(items_seen[item['name']]) + ".jpg")  
+
 
 
     print(dimensions)
